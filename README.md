@@ -1,5 +1,9 @@
 # LSEG Listed-Options Delta-Hedging & Delta-Vega Optimization Engine
 
+[![CI](https://github.com/Morwane/lseg-options-delta-vega-hedging-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/Morwane/lseg-options-delta-vega-hedging-engine/actions/workflows/ci.yml)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 **A research-grade Python engine for configurable listed-option books, using LSEG option data, Black-Scholes implied-volatility reconstruction, historical hedge backtesting, transaction-cost-aware delta hedging, delta-vega hedge optimization, and optional IBKR Paper safety validation.**
 
 ---
