@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Secrets and credentials — never commit
+*.credentials*
+*.secrets*
+config/secrets*
+.lseg_credentials
+lseg_credentials.json
+ibkr_credentials*
+config/local_*.yaml
+
+# IBKR / TWS
+*.jts
+tws_settings/
+
+# Outputs that may contain sensitive data
+outputs/executions/
+outputs/logs/
+
+# Keep output structure but not generated files
+outputs/reports/*.csv
+outputs/charts/*.png
+outputs/charts/*.pdf
+outputs/research/*.csv
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# Claude Code internal files — not for public repo
+CLAUDE.md
+CLAUDE_TASK.md
+CLAUDE_OPTION_HISTORY_HANDOFF.md
+README_FOR_HANDOFF.md
+.claude/

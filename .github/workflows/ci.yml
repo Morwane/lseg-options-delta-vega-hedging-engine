@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy pandas PyYAML matplotlib pytest
+
+      - name: Compile check
+        run: python -m compileall src scripts
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Run offline demo
+        run: python scripts/run_demo.py
+
+      - name: Run LSEG backtest (mock)
+        run: python scripts/run_lseg_historical_hedge_backtest.py --mock
+
+      - name: Run optimizer (mock)
+        run: python scripts/run_delta_vega_hedge_optimizer.py --mock --no-charts
+
+      - name: Run LSEG audit (mock)
+        run: python scripts/audit_lseg_option_universe.py --mock

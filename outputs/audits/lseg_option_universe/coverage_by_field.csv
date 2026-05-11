@@ -1,0 +1,8 @@
+field,total_rics,rics_with_data,coverage_pct,notes
+BID,120,120,100.0,Daily close bid price from LSEG
+ASK,120,120,100.0,Daily close ask price from LSEG
+MID,120,120,100.0,Derived (BID+ASK)/2 — valid when both bid and ask are positive and bid < ask
+IV (LSEG direct),120,0,0.0,TR.ImpliedVolatility — NOT available under current LSEG entitlement (EMPTY/ERROR)
+IV (BS bisection fallback),120,120,100.0,Black-Scholes IV solved from market mid — available whenever MID is available
+Greeks (LSEG direct),120,0,0.0,TR.Delta / TR.Gamma / TR.Vega — NOT available under current LSEG entitlement
+Greeks (BS fallback),120,120,100.0,Black-Scholes Greeks from BS-bisection IV — always used as primary engine

@@ -1,0 +1,41 @@
+# Real historical listed-options delta-hedging backtest configuration
+#
+# Coverage:
+#   - SPY call options only (no puts confirmed in LSEG audit)
+#   - Single expiry: January 2027
+#   - ~30 trading days of bid/ask history (2026-03-18 to 2026-04-29)
+#   - Greeks reconstructed daily from market mid via Black-Scholes IV bisection
+#   - No alpha strategy — pure delta-hedge P&L illustration
+#   - No IBKR orders in this phase
+
+underlying: SPY
+option_type: call
+expiry_date: "2027-01-15"           # Third Friday of January 2027 (standard monthly expiry)
+
+# Contract selection (applied at backtest start — no look-ahead)
+atm_contract_count: 5               # Select this many closest-to-ATM calls
+
+# Black-Scholes / IV parameters
+risk_free_rate: 0.05
+spy_dividend_yield: 0.013           # ~1.3% SPY trailing dividend yield
+
+iv_bisection_sigma_low: 0.001       # Very low sigma floor to handle deep-ITM calls
+iv_bisection_sigma_high: 5.0
+iv_bisection_tolerance: 0.000001
+
+# IV fallback: if BS bisection fails, use rolling realized vol
+iv_fallback_allowed: true
+iv_fallback_vol_window_days: 20
+iv_fallback_max_rate_warning: 0.30  # Backtest marked low-confidence above this rate
+
+# Hedge rules (backtest uses automated rebalance, no manual approval)
+delta_threshold_shares: 5.0
+max_order_notional_usd: 2000000
+hedge_cost_bps: 2.0                 # Fallback cost when no stock bid/ask available
+
+# Portfolio sizing (notional book for backtest)
+contracts_per_position: 1           # 1 contract per selected RIC
+contract_multiplier: 100            # Standard US equity option: 100 shares/contract
+
+# Output directory (relative to project root)
+output_dir: outputs/reports

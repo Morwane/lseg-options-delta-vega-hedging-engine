@@ -1,0 +1,27 @@
+{
+  "audit_date": "2026-05-11",
+  "data_source": "LSEG (lseg)",
+  "rics_tested": 120,
+  "rics_with_bid": 120,
+  "rics_with_ask": 120,
+  "rics_with_mid": 120,
+  "rics_with_lseg_iv": 0,
+  "rics_with_bs_fallback_iv": 120,
+  "avg_history_days": 35.0,
+  "min_history_days": 35,
+  "max_history_days": 35,
+  "lseg_greeks_available": false,
+  "lseg_iv_available": false,
+  "fallback_rule": "Black-Scholes IV bisection from market mid (bid+ask)/2",
+  "fallback_applies": "Always \u2014 LSEG historical Greeks unavailable under current entitlement",
+  "warnings": [
+    "LSEG historical option Greeks (TR.Delta, TR.ImpliedVolatility) returned EMPTY/ERROR",
+    "All Greeks computed via Black-Scholes fallback from LSEG market mid",
+    "SPY calls only (Jan 2027 expiry) \u2014 no puts confirmed in current RIC audit",
+    "Snapshot Greeks from LSEG audit were single-row only; not used in backtest"
+  ],
+  "rics_requested": 120,
+  "spy_trading_days": 35,
+  "history_count_requested": 35,
+  "mock_mode": false
+}

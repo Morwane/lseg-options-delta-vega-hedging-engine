@@ -1,0 +1,22 @@
+asset,test_type,ric,field,status,rows,columns,error
+SPY,underlying_price,SPY,TRDPRC_1,OK,5,['TRDPRC_1'],
+QQQ,underlying_price,QQQ.O,TRDPRC_1,OK,5,['TRDPRC_1'],
+TLT,underlying_price,TLT.O,TRDPRC_1,OK,5,['TRDPRC_1'],
+GLD,underlying_price,GLD,TRDPRC_1,OK,5,['TRDPRC_1'],
+SPY,field_probe_on_underlying,SPY,TRDPRC_1,OK,5,['TRDPRC_1'],
+SPY,field_probe_on_underlying,SPY,CLOSE,ERROR,0,[],"No data to return, please check errors: ERROR: No successful response.
+(TSCC.QS.UserRequestError.90006, The universe does not support the following fields: [CLOSE])"
+SPY,field_probe_on_underlying,SPY,CF_CLOSE,ERROR,0,[],"No data to return, please check errors: ERROR: No successful response.
+(TSCC.QS.UserRequestError.90006, The universe does not support the following fields: [CF_CLOSE])"
+SPY,field_probe_on_underlying,SPY,BID,OK,5,['BID'],
+SPY,field_probe_on_underlying,SPY,ASK,OK,5,['ASK'],
+SPY,field_probe_on_underlying,SPY,TR.BIDPRICE,OK,1,['Bid Price'],
+SPY,field_probe_on_underlying,SPY,TR.ASKPRICE,OK,1,['Ask Price'],
+SPY,field_probe_on_underlying,SPY,TR.CLOSEPRICE,OK,1,['Close Price'],
+SPY,field_probe_on_underlying,SPY,TR.PriceClose,OK,1,['Price Close'],
+SPY,field_probe_on_underlying,SPY,TR.ImpliedVolatility,EMPTY,0,['Implied Volatility'],
+SPY,field_probe_on_underlying,SPY,TR.IV,ERROR,0,[],Unable to resolve all requested fields in ['TR.IV']. The formula must contain at least one field or function.
+SPY,field_probe_on_underlying,SPY,TR.Delta,EMPTY,0,['Delta'],
+SPY,field_probe_on_underlying,SPY,TR.Gamma,EMPTY,0,['Gamma'],
+SPY,field_probe_on_underlying,SPY,TR.Vega,EMPTY,0,['Vega'],
+SPY,field_probe_on_underlying,SPY,TR.Theta,EMPTY,0,['Theta'],

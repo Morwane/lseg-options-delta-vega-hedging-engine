@@ -1,0 +1,7 @@
+ibkr:
+  host: 127.0.0.1
+  paper_port: 7497
+  live_port_blocked: 7496   # never connect to this
+  client_id: 101
+  market_data_type: delayed  # 3 = delayed, 1 = live (live is blocked)
+  timeout_seconds: 10

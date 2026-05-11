@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-04-29T13:09:06.137828",
+  "purpose": "Audit LSEG access for underlying prices and option-style fields for Automatic Delta Hedging with IBKR API.",
+  "status_counts": {
+    "OK": 11,
+    "EMPTY": 5,
+    "ERROR": 3
+  },
+  "output_csv": "outputs/audits/lseg_options_access_20260429_130840/lseg_options_access_audit.csv",
+  "note": "This audit confirms underlying access and probes option-style field names. Exact option RIC discovery may require a separate chain/discovery API or known option RICs."
+}

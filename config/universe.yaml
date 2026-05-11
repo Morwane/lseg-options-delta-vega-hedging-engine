@@ -1,0 +1,28 @@
+underlyings:
+  SPY:
+    ibkr_symbol: SPY
+    ibkr_exchange: SMART
+    ibkr_currency: USD
+    lseg_ric_candidates: [SPY, SPY.N, SPY.P]
+    multiplier: 100
+
+  QQQ:
+    ibkr_symbol: QQQ
+    ibkr_exchange: SMART
+    ibkr_currency: USD
+    lseg_ric_candidates: [QQQ.O, QQQ, QQQ.OQ]
+    multiplier: 100
+
+  TLT:
+    ibkr_symbol: TLT
+    ibkr_exchange: SMART
+    ibkr_currency: USD
+    lseg_ric_candidates: [TLT.O, TLT, TLT.OQ]
+    multiplier: 100
+
+  GLD:
+    ibkr_symbol: GLD
+    ibkr_exchange: SMART
+    ibkr_currency: USD
+    lseg_ric_candidates: [GLD, GLD.P, GLD.N]
+    multiplier: 100

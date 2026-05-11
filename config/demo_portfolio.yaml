@@ -1,0 +1,52 @@
+# Synthetic demo portfolio — no real account data.
+# All positions are fictional and used only for offline demo runs.
+
+option_positions:
+  - id: pos_001
+    underlying: SPY
+    option_type: call
+    strike: 520.0
+    expiry: "2026-06-19"
+    quantity: -10          # short 10 calls
+    multiplier: 100
+    implied_vol: 0.18      # fallback IV when market IV unavailable
+
+  - id: pos_002
+    underlying: SPY
+    option_type: put
+    strike: 490.0
+    expiry: "2026-06-19"
+    quantity: -10          # short 10 puts
+    multiplier: 100
+    implied_vol: 0.20
+
+  - id: pos_003
+    underlying: SPY
+    option_type: call
+    strike: 530.0
+    expiry: "2026-09-18"
+    quantity: 5            # long 5 calls
+    multiplier: 100
+    implied_vol: 0.17
+
+  - id: pos_004
+    underlying: QQQ
+    option_type: call
+    strike: 440.0
+    expiry: "2026-06-19"
+    quantity: -5
+    multiplier: 100
+    implied_vol: 0.22
+
+underlying_positions:
+  SPY:
+    quantity: 200          # existing hedge position in SPY shares
+  QQQ:
+    quantity: 0
+
+# Market snapshot for demo (no live data required)
+spot_prices:
+  SPY: 505.0
+  QQQ: 430.0
+
+risk_free_rate: 0.053      # approximate 3-month T-bill yield for demo

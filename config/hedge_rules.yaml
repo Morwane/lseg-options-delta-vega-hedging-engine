@@ -1,0 +1,16 @@
+paper_trading_only: true
+allow_live_trading: false
+dry_run_default: true
+manual_approval_required: true
+
+# Fire a hedge order only when net delta exceeds this threshold (in underlying shares)
+delta_threshold_shares: 100
+
+# Maximum notional USD value of a single hedge order
+max_order_notional_usd: 25000
+
+# Minimum time between rebalances to avoid over-trading
+min_rebalance_interval_minutes: 30
+
+# Fallback transaction cost estimate when no bid/ask spread is available
+fallback_transaction_cost_bps: 2.0
